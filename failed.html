@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Failed - EASY MOBILE PAY</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      padding: 40px 20px;
+    }
+
+    .warning-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      background: #e74c3c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #c0392b;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    .retry-btn {
+      background: #6c5ce7;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 32px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .retry-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="warning-icon">!</div>
+  <h1>Payment Not Received</h1>
+  <p>We didn’t receive any payment from you. Please retry the payment or contact WhatsApp support.</p>
+  <button class="retry-btn" onclick="window.location.href='payment.html'">Retry Payment</button>
+</div>
+
+</body>
+</html>
+

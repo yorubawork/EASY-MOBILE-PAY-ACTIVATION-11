@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processing - EASY MOBILE PAY</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: orange; 
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 120px;
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    p {
+      font-size: 18px;
+      margin-top: 40px;
+      font-weight: 500;
+    }
+
+    .loader {
+      margin: 40px auto;
+      border: 6px solid rgba(255,255,255,0.3);
+      border-top: 6px solid white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1>EASY MOBILE PAY ACTIVATION</h1>
+
+  <div class="loader"></div>
+
+  <p id="statusText">Verifying account details...</p>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("statusText").innerHTML = "Processing your information...";
+    }, 3000); 
+
+    setTimeout(() => {
+      document.getElementById("statusText").innerHTML = "Setting up your EASY MOBILE PAY...";
+    }, 5000); 
+
+    setTimeout(() => {
+      document.getElementById("statusText").innerHTML = "Almost done...";
+    }, 7000); 
+
+    setTimeout(() => {
+      window.location.href = 'payment.html';
+    }, 7900); 
+  </script>
+
+</body>
+</html>

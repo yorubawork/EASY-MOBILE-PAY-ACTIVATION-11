@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EASY MOBILE PAY</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f7fb;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #loading-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 30px;
+    }
+
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #ffd700;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #activation-container {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading-container">
+    <img src="/file_00000000147461f4904615c47dfbc71b.png" alt="EASY MOBILE PAY">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="activation-container">
+    <!-- Activation form will be loaded here -->
+  </div>
+
+  <script>
+    // Show loading screen for 5 seconds then show activation form
+    setTimeout(() => {
+      document.getElementById('loading-container').style.display = 'none';
+      document.getElementById('activation-container').style.display = 'block';
+      // Load the activation form
+      fetch('activation.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('activation-container').innerHTML = html;
+          // Attach submit handler after form is injected
+          const form = document.querySelector('#activation-container form');
+          if (form) {
+            form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              window.location.href = 'processing.html';
+            });
+          }
+        });
+    }, 5000);
+  </script>
+</body>
+</html>
